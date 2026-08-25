@@ -3,9 +3,9 @@ services:
     image: postgres:17
     container_name: msbd-pg
     environment:
-      POSTGRES_USER: msbd
-      POSTGRES_PASSWORD: msbd2026
-      POSTGRES_DB: latihan
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
     ports:
       - "5432:5432"
     volumes:
@@ -20,8 +20,8 @@ services:
     image: mongo:8
     container_name: msbd-mongo
     environment:
-      MONGO_INITDB_ROOT_USERNAME: msbd
-      MONGO_INITDB_ROOT_PASSWORD: msbd2026
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_INITDB_ROOT_USERNAME}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_INITDB_ROOT_PASSWORD}
     ports:
       - "27017:27017"
     volumes:
