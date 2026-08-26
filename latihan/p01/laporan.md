@@ -51,3 +51,41 @@ Healthcheck penting ketika layanan lain bergantung pada database karena status c
  4. Mengapa password tidak sebaiknya ditulis langsung di docker-compose.yml?
 Password yang ditulis langsung di docker-compose.yml dapat terlihat oleh orang lain dan ikut masuk ke repositori Git. Hal tersebut dapat menyebabkan kredensial tersebar dan dapat digunakan oleh pihak yang tidak memiliki izin.
 Salah satu cara yang lebih aman adalah menggunakan environment file seperti .env dan memasukkan .env ke dalam .gitignore. Dengan cara tersebut, nilai password tidak perlu dimasukkan ke repositori Git.
+Langkah 3. Mengakses PostgreSQL melalui psql dan DBeaver
+A psql
+1. Gunakan command "docker compose exec postgres psql -U msbd -d latihan
+" untuk menjalankan psql di service PostgreSQL.
+Hasil:
+psql (17.11-1. pgdg13+2)
+type "help" for help.
+
+latihan=# //artinya kita sudah masuk ke psql
+2. Lalu kita jalankan perintah
+SELECT version(); // untuk meminta PostgreSQL menunjukkan informasi versinya
+\l // untuk melihat daftar database yang tersedia
+\dt  // untuk manampilkan daftar tabel
+\dn // untuk melihat daftar schema
+\du //  untuk melihat user/role PostgreSQL
+SHOW data_directory; // PostgreSQL akan menunjukkan lokasi tempat data PostgreSQL disimpan di dalam container
+SHOW shared_buffers;  // PostgreSQL akan menampilkan nilai konfigurasi
+\timing on  //Setelah timing aktif, setiap kali kita menjalankan query, psql bisa menunjukkan kira-kira berapa lama query tersebut dieksekusi
+example = Time: 1.234 ms
+\q  //Untuk keluar dari psql
+B DBeaver
+1. Masuk ke apk DBeaver Community pastikan Docker Desktop tetap hidup
+2. Di DBeaver, cari pilihan "New Database Connection" klik nanti banyak pilihan database, tetapi  pilih yang postgreSQL
+3. Isi informasi koneksi sesuai konfigurasi yang kita buat
+Host = localhost
+Port = 5432
+Database = latihan
+Username = msbd
+Password =msbd2026
+4. test connection jika berhasil klik finish Sekarang koneksi PostgreSQL akan muncul di panel sebelah kiri DBeaver.
+5. Di panel sebelah kiri, klik tanda panah pada koneksi PostgreSQL.
+Cari:Databases atau langsung database:latihan
+Buka database tersebut.
+Kemudian cari:Schemas
+Buka:Schemas
+Kemudian cari:public
+
+
