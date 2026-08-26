@@ -87,5 +87,27 @@ Buka database tersebut.
 Kemudian cari:Schemas
 Buka:Schemas
 Kemudian cari:public
+6. ER Diagram adalah tampilan visual hubungan antar tabel.
+Pertanyaan wajib langkah 3
+1. Contoh aktivitas yang lebih cepat dengan psql
+=Misalnya kita cuma ingin tahu versi PostgreSQL.
+Dengan psql tinggal:
+SELECT version(); Atau ingin melihat database:\l
+Cepat karena tinggal ketik.
+Jadi psql enak untuk:
+-command sederhana;
+-query cepat;
+-bekerja langsung melalui terminal;
+-mengecek konfigurasi dengan cepat.
+2. Contoh aktivitas yang lebih cepat dengan DBeaver
+Misalnya ingin melihat:
+-daftar tabel;
+-kolom;
+-struktur tabel;
+-hubungan antar tabel;
+DBeaver biasanya lebih nyaman karena semuanya ditampilkan secara visual.
+
+
+
 
 
