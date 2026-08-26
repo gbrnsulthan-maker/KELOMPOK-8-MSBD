@@ -2,10 +2,10 @@
 ## Manajemen Sistem Basis Data
 
 ### Anggota Kelompok
-1. Ghibran — Ketua Tim
-2. Novri
-3. Limjun
-4. Bintang
+1. Ghibran Sultan Alfarabi - 251402031
+2. Novri Ilyasah - 251402005
+3. Limjun Basani Sipayung - 251402114
+4. Bintang Pamungkas - 251402082
 
 # 1. Persiapan Docker
 
