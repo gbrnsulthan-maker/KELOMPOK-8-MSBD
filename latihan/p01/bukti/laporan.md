@@ -367,3 +367,24 @@ Database Pagila berhasil direstore dan digunakan untuk melakukan pengujian query
 Melalui query V1 sampai V4 dapat dilakukan verifikasi terhadap jumlah tabel, ukuran tabel, data penyewaan film, serta proses eksekusi query menggunakan EXPLAIN ANALYZE.
 
 Praktikum ini membantu memahami cara menjalankan database menggunakan Docker serta cara mengakses dan melakukan verifikasi database menggunakan PostgreSQL.
+
+# Pertanyaan 1
+
+
+# Pertanyaan 2
+
+
+# Pertanyaan 3
+
+Peminjaman dan Unit Alat tidak dihubungkan secara langsung karena hubungan keduanya bersifat banyak-ke-banyak. Satu transaksi peminjaman dapat memuat beberapa unit alat, sedangkan satu unit alat dapat tercatat dalam banyak transaksi peminjaman pada waktu yang berbeda.
+
+Entitas Detail Peminjaman digunakan sebagai entitas asosiatif untuk memecah hubungan tersebut. Jika hubungan dibuat langsung, sistem akan kehilangan tempat yang tepat untuk menyimpan informasi yang hanya berlaku pada satu unit dalam satu transaksi, seperti kondisi unit ketika dipinjam.
+
+
+# Pertanyaan 4
+
+Alat menggambarkan jenis atau model alat, sedangkan Unit Alat menggambarkan barang fisik individual yang benar-benar dimiliki laboratorium.
+
+Sebagai contoh, "Multimeter Digital" merupakan Alat. Namun laboratorium dapat memiliki beberapa unit Multimeter Digital dengan kode UNIT-001, UNIT-002, dan UNIT-003.
+
+Pertanyaan bisnis yang hanya dapat dijawab jika keduanya dipisahkan adalah: "Unit Multimeter Digital mana yang saat ini sedang diperbaiki?" Sistem membutuhkan identitas setiap unit fisik untuk menjawab pertanyaan tersebut.
