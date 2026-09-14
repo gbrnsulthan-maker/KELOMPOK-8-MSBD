@@ -52,5 +52,6 @@ REFRESH MATERIALIZED VIEW lab4.ringkasan_akses;
 
 
 -- Hasil pengujian aktual:
--- CONCURRENTLY : 1539.946 ms
+-- CONCURRENTLY : 2887.184 ms
 -- NORMAL       : 2161.600 ms
+-- SELECT count(*) saat concurrent refresh : 52 baris
