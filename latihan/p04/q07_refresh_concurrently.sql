@@ -26,3 +26,12 @@ ON lab4.ringkasan_akses (
 -- Setelah unique index dibuat, refresh concurrent harus berhasil.
 
 REFRESH MATERIALIZED VIEW CONCURRENTLY lab4.ringkasan_akses;
+
+-- Hasil pengujian:
+-- Percobaan 1:
+-- ERROR: cannot refresh materialized view "lab4.ringkasan_akses" concurrently
+-- HINT: Create a unique index with no WHERE clause on one or more columns of the materialized view.
+--
+-- Percobaan 3:
+-- REFRESH MATERIALIZED VIEW
+-- Time: 940.052 ms
