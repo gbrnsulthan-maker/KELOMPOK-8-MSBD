@@ -1,0 +1,2 @@
+-- Migration 0044: Tidak ada perubahan yang perlu di-rollback.
+-- Migration ini hanya melakukan verifikasi.
