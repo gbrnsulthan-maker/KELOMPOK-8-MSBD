@@ -37,4 +37,18 @@ BEGIN
 END;
 $$;
 
-CALL lab5.process_rental_commit(4, 1, 1, 4.99);
+CALL lab5.process_rental_commit(4, 1, 1, 4.99);-- HASIL PENGUJIAN PYTHON
+-- test_q04.py memanggil:
+-- CALL lab5.process_rental_commit(5, 1, 1, 4.99)
+--
+-- Hasil:
+-- psycopg.errors.InvalidTransactionTermination:
+-- invalid transaction termination
+-- CONTEXT: PL/pgSQL function lab5.process_rental_commit(...)
+-- line 16 at COMMIT
+--
+-- Kesimpulan:
+-- COMMIT di dalam procedure bermasalah ketika procedure dipanggil
+-- melalui Python/psycopg karena transaksi sedang dikelola oleh koneksi
+-- Python. PostgreSQL menolak COMMIT tersebut dan menghasilkan
+-- InvalidTransactionTermination.
