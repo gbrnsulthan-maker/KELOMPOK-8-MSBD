@@ -83,7 +83,3 @@ Pengujian FastAPI harus membuktikan bahwa Q22 menghasilkan HTTP 201, Q23 menghas
 Refleksi A sampai E, README.md, dan laporan.md juga harus sudah lengkap. Setiap anggota kelompok harus memiliki commit yang dapat ditelusuri.
 
 Setelah seluruh pengujian selesai, merge request dibuat dan link merge request dicantumkan pada laporan.
-
-## Link Merge Request
-
-`[ISI LINK MERGE REQUEST]`
