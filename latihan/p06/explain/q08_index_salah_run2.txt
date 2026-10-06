@@ -1,0 +1,15 @@
+SET
+CREATE INDEX
+                                                                   QUERY PLAN                                                                   
+------------------------------------------------------------------------------------------------------------------------------------------------
+ Limit  (cost=0.43..5161.24 rows=20 width=22) (actual time=1.293..12.123 rows=20 loops=1)
+   Buffers: shared hit=874
+   ->  Index Scan Backward using ev_salah_idx on event_log  (cost=0.43..30449.21 rows=118 width=22) (actual time=1.290..12.110 rows=20 loops=1)
+         Index Cond: ((terjadi_pada >= '2024-05-31 17:00:00+00'::timestamp with time zone) AND (customer_id = 4211))
+         Buffers: shared hit=874
+ Planning:
+   Buffers: shared hit=122
+ Planning Time: 0.978 ms
+ Execution Time: 12.182 ms
+(9 rows)
+
