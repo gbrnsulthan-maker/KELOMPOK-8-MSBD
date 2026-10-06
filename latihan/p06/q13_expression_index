@@ -1,0 +1,12 @@
+-- 1. Buat Expression Index
+CREATE INDEX IF NOT EXISTS ev_email_lower_idx ON lab6.event_log (lower(email));
+
+-- 2. Uji Query Biasa (Apakah index dipakai?)
+-- Hasil: TIDAK memakai index (menggunakan Sequential Scan / Seq Scan)
+EXPLAIN (ANALYZE, BUFFERS)
+SELECT * FROM lab6.event_log WHERE email = 'user@example.com';
+
+-- 3. Uji Query dengan lower(email) (Apakah expression index dipakai?)
+-- Hasil: MEMAKAI index ev_email_lower_idx (Index Scan / Bitmap Index Scan)
+EXPLAIN (ANALYZE, BUFFERS)
+SELECT * FROM lab6.event_log WHERE lower(email) = 'user@example.com';
